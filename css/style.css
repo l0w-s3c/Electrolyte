@@ -1,0 +1,76 @@
+body {
+  /*setup the hero image*/
+  background-image: url(../res/hero.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.container {
+  /*setup the main grid system*/
+  display: grid;
+  grid-template:
+    ".      .      ."      5%
+    ".      header ."      5%
+    ".      recent ."      50%
+    ".      main   ."      35%
+    / 20% 60% 20%;
+    height: 95vh;
+}
+
+header {
+  grid-area: header;
+  display: flex;
+  justify-content: center;
+  background-color: red;
+}
+li {
+  display: inline;
+}
+
+.recent {
+  grid-area: recent;
+
+  /*setup the recent tab grid*/
+  display: grid;
+  grid-template:
+    "news1  news2 news3 news4" 70%
+    "button tag   tag   tag"   30%
+    / 1fr 1fr 1fr 1fr;
+  height: 50vh;
+
+  padding: 3%;
+  background-color: blue;
+}
+#news1 {
+  grid-area: news1;
+}
+#news2 {
+  grid-area: news2;
+}
+#news3 {
+  grid-area: news3;
+}
+#news4 {
+  grid-area: news4;
+}
+.recent button {
+  grid-area: button;
+}
+.recent p {
+  grid-area: tag;
+}
+
+.main {
+  grid-area: main;
+  background-color: green;
+}
+
+footer {
+  /*make the footer stick to the bottom*/
+  position: fixed;
+  left: 0;
+  right: 0;
+
+  height: 5vh;
+  background-color: black;
+}
